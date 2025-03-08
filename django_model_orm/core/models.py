@@ -23,14 +23,15 @@ class Restaurant(models.Model):
     
 class Rating(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
+    restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE, related_name='ratings')
+    # related_name will change the name of associated manager for backward lookup
     rating = models.PositiveSmallIntegerField()
 
     def __str__(self):
         return f'{self.user}-{self.restaurant}-rating:{self.rating}'
 
 class Sale(models.Model):
-    restaurant = models.ForeignKey(Restaurant, on_delete=models.SET_NULL, null=True)
+    restaurant = models.ForeignKey(Restaurant, on_delete=models.SET_NULL, null=True, related_name='sales')
     income = models.DecimalField(max_digits=8, decimal_places=2)
     datetime = models.DateTimeField()
 
