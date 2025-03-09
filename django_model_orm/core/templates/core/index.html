@@ -1,0 +1,11 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+{% for rating in ratings %}
+    <div>
+        {{rating.restaurant.name}} - {{rating.rating}}
+    </div>
+{% endfor %}
+
+{% endblock %}

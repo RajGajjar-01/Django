@@ -5,13 +5,13 @@ from django.contrib.auth.models import User
 
 def run():
     
-    # models.Restaurant.objects.create(
-    #     name = 'Pipo Pizza',
-    #     date_opened = timezone.now(),
-    #     restaurant_type = models.Restaurant.TypeChoices.ITALIAN,
-    #     longitude = 12.253519,
-    #     latitude = 52.737683,
-    # )
+    models.Restaurant.objects.create(
+        name = 'Lapinoz Pizza',
+        date_opened = timezone.now(),
+        restaurant_type = models.Restaurant.TypeChoices.ITALIAN,
+        longitude = 12.253519,
+        latitude = 52.737683,
+    )
 
     # print(connection.queries)
 
